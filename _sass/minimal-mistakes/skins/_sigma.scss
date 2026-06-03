@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Sigma skin
+   Palette sampled from sigma_cs.png — near-black background with an
+   orange → amber accent gradient.
+     #000000  background / emblem field
+     #E06828  primary orange (dominant tone)
+     #E25D2A  red-orange
+     #ED9937  amber / gold (brightest)
+   ========================================================================== */
+
+/* Colors */
+$background-color: #0a0a0b !default;
+$text-color: #e8e6e3 !default;
+$muted-text-color: mix(#fff, $background-color, 55%) !default;
+$primary-color: #f53b22 !default; // bright red (leaning orange)
+$border-color: mix(#fff, $background-color, 14%) !default;
+$code-background-color: mix(#fff, $background-color, 6%) !default;
+$code-background-color-dark: mix(#fff, $background-color, 3%) !default;
+$form-background-color: mix(#fff, $background-color, 8%) !default;
+$footer-background-color: #000000 !default;
+
+$link-color: #f53b22 !default; // same bright red as titles (uniform accent)
+$link-color-hover: mix(#fff, $link-color, 25%) !default;
+$link-color-visited: mix(#fff, $link-color, 10%) !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#fff, $background-color, 20%) !default;
+
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}
+
+/* Sigma accents -------------------------------------------------------------*/
+
+/* Section / page titles glow in the emblem's orange. */
+.page__title,
+.archive__item-title a {
+  color: $primary-color;
+}
+
+/* Masthead sits on pure black with a bright red underline, echoing the emblem. */
+.masthead {
+  background-color: #000000;
+  border-bottom: 1px solid $primary-color;
+}
+
+/* Blockquotes and table headers pick up the bright red accent. */
+blockquote {
+  border-left-color: $primary-color;
+}
+
+th {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+/* Primary buttons (e.g. the CV download) use a warm orange→amber feel. */
+.btn--primary {
+  background-color: $primary-color;
+  &:hover {
+    background-color: mix(#fff, $primary-color, 12%);
+  }
+}

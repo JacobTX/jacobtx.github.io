@@ -1,0 +1,85 @@
+// ----------------------------------------------------------------------------
+// Font fine-tuning, shared by both stylesheets.
+// (Michroma only ships a 400 weight; it is wide & geometric.)
+// ----------------------------------------------------------------------------
+// Headings use the body font (Nunito), bold for hierarchy.
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title {
+  font-family: $header-font-family; // Nunito
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+// The masthead title and its subtitle both use the Michroma display font.
+.greedy-nav .site-title,
+.greedy-nav .site-subtitle {
+  font-family: $michroma;
+  font-weight: 400; // Michroma ships a single (400) weight
+  letter-spacing: 0.02em;
+}
+
+// Michroma is wide, so dial the masthead title size down a touch.
+.masthead__inner-wrap .site-title {
+  font-size: 1.25em;
+}
+
+// Smaller top-navigation menu items (About / Research / Projects / ...).
+.greedy-nav {
+  .visible-links a,
+  .hidden-links a {
+    font-size: 0.92em;
+  }
+
+  // Center the menu rather than hugging the far right — balances the empty
+  // space (less gap before "About") and leaves room before the toggles.
+  .visible-links {
+    justify-content: center;
+  }
+}
+
+// A little breathing room between the last menu item and the theme toggle.
+.greedy-nav .theme-toggle {
+  margin-inline-start: 0.75rem;
+}
+
+// Global type scale — dial the whole site down a notch. The theme defaults
+// are 16/18/20/22px across breakpoints, which reads large with a mono body.
+html {
+  font-size: 13px;
+  @include breakpoint($medium) { font-size: 14px; }
+  @include breakpoint($large) { font-size: 15px; }
+  @include breakpoint($x-large) { font-size: 16px; }
+}
+
+// Tighten vertical spacing so the page feels less airy.
+.page__content {
+  p, li { line-height: 1.45; }
+  p { margin: 0 0 0.9em; }
+  li { margin-bottom: 0.25em; }
+}
+
+// ----------------------------------------------------------------------------
+// Light / dark theme-toggle button (injected into the masthead nav by JS).
+// ----------------------------------------------------------------------------
+.theme-toggle {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: inherit;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.greedy-nav .theme-toggle {
+  align-self: center;
+  margin-right: 10px;
+  color: $masthead-link-color;
+  &:hover { color: $primary-color; }
+}

@@ -1,0 +1,47 @@
+<!-- start custom footer snippets -->
+
+<!-- Theme switcher: injects a sun/moon toggle into the masthead nav. -->
+<script>
+  (function () {
+    function current() {
+      return document.documentElement.getAttribute('data-theme') || 'dark';
+    }
+    var btn;
+    function refresh() {
+      if (!btn) return;
+      var dark = current() !== 'light';
+      btn.innerHTML = dark ? '<i class="fas fa-sun" aria-hidden="true"></i>'
+                           : '<i class="fas fa-moon" aria-hidden="true"></i>';
+      var label = dark ? 'Switch to light theme' : 'Switch to dark theme';
+      btn.setAttribute('aria-label', label);
+      btn.setAttribute('title', label);
+    }
+    function apply(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      var link = document.getElementById('theme-light-css');
+      if (link) link.disabled = (t !== 'light');
+      try { localStorage.setItem('jts-theme', t); } catch (e) {}
+      refresh();
+    }
+    function inject() {
+      var nav = document.querySelector('.greedy-nav');
+      if (!nav || nav.querySelector('.theme-toggle')) return;
+      btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'theme-toggle';
+      var search = nav.querySelector('.search__toggle');
+      if (search) { nav.insertBefore(btn, search); } else { nav.appendChild(btn); }
+      btn.addEventListener('click', function () {
+        apply(current() === 'light' ? 'dark' : 'light');
+      });
+      refresh();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', inject);
+    } else {
+      inject();
+    }
+  })();
+</script>
+
+<!-- end custom footer snippets -->

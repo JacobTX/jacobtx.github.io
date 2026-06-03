@@ -1,0 +1,30 @@
+<!-- start custom head snippets -->
+
+<!-- Favicon: sigma emblem -->
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/images/favicon.png' | relative_url }}">
+
+<!-- Web fonts: Michroma (titles) + Nunito (body) + IBM Plex Mono (code) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Michroma&family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap">
+
+<!-- Light/dark theme switch. main.css = dark "sigma"; light.css overrides it when enabled. -->
+<link rel="stylesheet" id="theme-light-css" href="{{ '/assets/css/light.css' | relative_url }}" disabled>
+<script>
+  // Apply the theme before paint to avoid a flash.
+  // First visit follows the OS setting; after that the saved choice wins.
+  (function () {
+    try {
+      var saved = localStorage.getItem('jts-theme');
+      var prefersLight = window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: light)').matches;
+      var t = saved || (prefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', t);
+      var link = document.getElementById('theme-light-css');
+      if (link) link.disabled = (t !== 'light');
+    } catch (e) {}
+  })();
+</script>
+
+<!-- end custom head snippets -->

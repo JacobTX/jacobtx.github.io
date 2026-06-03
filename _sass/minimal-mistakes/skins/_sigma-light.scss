@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Sigma skin — LIGHT variant
+   Same orange/amber accents as the dark sigma skin (from sigma_cs.png),
+   on a warm off-white background.
+   ========================================================================== */
+
+/* Colors */
+$background-color: #ffffff !default; // white
+$text-color: #1b1b1d !default;
+$muted-text-color: mix(#000, $background-color, 45%) !default;
+$primary-color: #f53b22 !default; // bright red (matches the dark theme)
+$border-color: mix(#000, $background-color, 12%) !default;
+$code-background-color: mix(#000, $background-color, 5%) !default;
+$code-background-color-dark: mix(#000, $background-color, 8%) !default;
+$form-background-color: mix(#000, $background-color, 4%) !default;
+$footer-background-color: mix(#000, $background-color, 6%) !default;
+
+$link-color: #f53b22 !default; // same bright red as titles (uniform accent)
+$link-color-hover: mix(#000, $link-color, 20%) !default;
+$link-color-visited: mix(#000, $link-color, 10%) !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $primary-color !default;
+$navicon-link-color-hover: mix(#000, $background-color, 20%) !default;
+
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}
+
+/* Sigma accents -------------------------------------------------------------*/
+.page__title,
+.archive__item-title a {
+  color: $primary-color;
+}
+
+.masthead {
+  background-color: $background-color;
+  border-bottom: 1px solid $primary-color;
+}
+
+blockquote {
+  border-left-color: $primary-color;
+}
+
+th {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.btn--primary {
+  background-color: $primary-color;
+  &:hover {
+    background-color: mix(#000, $primary-color, 12%);
+  }
+}

@@ -1,0 +1,16 @@
+// ----------------------------------------------------------------------------
+// Custom font variables.
+//   Body + headings : Nunito (rounded humanist sans)
+//   Masthead title  : Michroma (geometric display) — only "Jacob Thomas Sony"
+//   Code            : IBM Plex Mono
+// Imported before the theme so these override its `!default` variables.
+// Shared by both the dark (main.scss) and light (light.scss) stylesheets.
+// ----------------------------------------------------------------------------
+$nunito: "Nunito", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$michroma: "Michroma", "Trebuchet MS", Helvetica, sans-serif;
+$serif: $nunito;
+$sans-serif: $nunito;
+$monospace: "IBM Plex Mono", Monaco, Consolas, "Lucida Console", monospace;
+$sans-serif-narrow: $sans-serif;
+$global-font-family: $sans-serif;
+$header-font-family: $nunito; // all headings use Nunito; site title overridden below

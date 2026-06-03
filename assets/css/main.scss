@@ -1,0 +1,13 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+@import "jts-font-vars"; // custom fonts (must precede the theme)
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin (dark "sigma")
+@import "minimal-mistakes"; // main partials
+
+@import "jts-overrides"; // font tuning + theme-toggle button
